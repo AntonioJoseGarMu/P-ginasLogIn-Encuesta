@@ -54,7 +54,7 @@
                             placeholder="Nombre">
                     </div>
                     <div class="mb-3">
-                        <input type="text" class="form-control" id="Apellidos" placeholder="Apellidos">
+                        <input type="text" class="form-control" id="Codigo" placeholder="Código">
                     </div>
                     <div class="mb-3">
                         <input type="password" class="form-control" id="Password" placeholder="Contraseña">
@@ -103,6 +103,7 @@
         event.preventDefault();
         var data = {
             email: document.getElementById('Nombre').value,
+            codigo: document.getElementById('Codigo').value,
             password: document.getElementById('Password').value
         }
 
@@ -120,6 +121,9 @@
             .then(data => {
                 console.log(data.token)
                 sessionStorage.setItem('token', data.token)
+                sessionStorage.setItem('id', data.idUsuario)
+                sessionStorage.setItem('codigoEncuesta', data.codigo)
+                sessionStorage.setItem('nombre', data.displayName)
                 // Si el usuario está registrado te redirige a encuesta.html
                 if(data.token){
                     location.assign('/encuesta.html')
