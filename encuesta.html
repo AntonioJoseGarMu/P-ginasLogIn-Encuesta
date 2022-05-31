@@ -36,6 +36,13 @@
         </div>
 
         <!-- Aqui deberían de ir los alumnos de la clase, hay que sacarlo de la base de datos y no lo sé hacer aún-->
+        <div class="row">
+            <div class="col-12 mt-2">
+                <div class="alert bg-secondary text-center p-0" role="alert">
+                    <span id="nombres"></span>
+                </div>
+            </div>
+        </div>
 
         <!-- Formularios -->
         <div class="row ms-1 me-1">
@@ -141,8 +148,7 @@
                             <input type="inter" id="res511" class="form-control">
                         </div>
                         <div class="col-auto">
-                            <input type="textarea" id="res512" class="form-control"
-                                placeholder="Indica el motivo">
+                            <input type="textarea" id="res512" class="form-control" placeholder="Indica el motivo">
                         </div>
                     </div>
 
@@ -151,8 +157,7 @@
                             <input type="inter" id="res521" class="form-control">
                         </div>
                         <div class="col-auto">
-                            <input type="textarea" id="res522" class="form-control"
-                                placeholder="Indica el motivo">
+                            <input type="textarea" id="res522" class="form-control" placeholder="Indica el motivo">
                         </div>
                     </div>
 
@@ -161,8 +166,7 @@
                             <input type="inter" id="res531" class="form-control">
                         </div>
                         <div class="col-auto">
-                            <input type="textarea" id="res532" class="form-control"
-                                placeholder="Indica el motivo">
+                            <input type="textarea" id="res532" class="form-control" placeholder="Indica el motivo">
                         </div>
                     </div>
                 </div>
@@ -206,7 +210,20 @@
 
     <script>
         const $bEnviar = document.getElementById('Enviar')
+        const $nombresAlums = document.getElementById('nombres')
+        let cont = 1;
 
+        const pedirDatos = async () => {
+            const respuesta = await fetch('http://localhost:3001/api/users');
+            let datos = await respuesta.json();
+            
+            for (let i = 0; i <= datos.users.length; i++) {
+                $nombresAlums.innerHTML += `<span> ${cont}-${datos.users[i].displayName}; </span>`;
+                cont++;
+            }
+        }
+
+        pedirDatos();
 
         $bEnviar.addEventListener('click', event => {
             event.preventDefault();
@@ -237,27 +254,20 @@
 
             console.log(data)
 
-            // fetch('http://localhost:3001/api/encuesta', {
-            //     method: 'POST',
-            //     body: JSON.stringify(data),
-            //     headers: {
-            //         'Accept': 'application/json',
-            //         'Content-Type': 'application/json'
-            //     }
-            // })
-            //     .then(res => res.json())
-            //     // .then(data => {
-            //     //     console.log(data.token)
-            //     //     sessionStorage.setItem('token', data.token)
-            //     //     sessionStorage.setItem('id', data.idUsuario)
-            //     //     sessionStorage.setItem('nombre', data.displayName)
-            //     //     // Si el usuario está registrado te redirige a encuesta.html
-            //     //     if (data.token) {
-            //     //         location.assign('/encuesta.html')
-            //     //     }
-            //     // })
+            fetch('http://localhost:3001/api/encuesta', {
+                method: 'POST',
+                body: JSON.stringify(data),
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                }
+            })
+                .then(res => res.json())
+                .then(data => {
+                    // location.assign('/registro.html')
+                })
 
-            //     .catch(err => { console.log(`Error al enviar la encuesta: ${err}`) })
+                .catch(err => { console.log(`Error al enviar la encuesta: ${err}`) })
         })
     </script>
 </body>
