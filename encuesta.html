@@ -53,13 +53,13 @@
                     </div>
                     <div class="row mb-3">
                         <div class="col-1">
-                            <input type="inter" id="inputPassword6" class="form-control">
+                            <input type="inter" id="res11" class="form-control">
                         </div>
                         <div class="col-1">
-                            <input type="inter" id="inputPassword6" class="form-control">
+                            <input type="inter" id="res12" class="form-control">
                         </div>
                         <div class="col-1">
-                            <input type="inter" id="inputPassword6" class="form-control">
+                            <input type="inter" id="res13" class="form-control">
                         </div>
                     </div>
                 </div>
@@ -73,13 +73,13 @@
                     </div>
                     <div class="row mb-3">
                         <div class="col-1">
-                            <input type="inter" id="inputPassword6" class="form-control">
+                            <input type="inter" id="res21" class="form-control">
                         </div>
                         <div class="col-1">
-                            <input type="inter" id="inputPassword6" class="form-control">
+                            <input type="inter" id="res22" class="form-control">
                         </div>
                         <div class="col-1">
-                            <input type="inter" id="inputPassword6" class="form-control">
+                            <input type="inter" id="res23" class="form-control">
                         </div>
                     </div>
                 </div>
@@ -93,13 +93,13 @@
                     </div>
                     <div class="row mb-3">
                         <div class="col-1">
-                            <input type="inter" id="inputPassword6" class="form-control">
+                            <input type="inter" id="res31" class="form-control">
                         </div>
                         <div class="col-1">
-                            <input type="inter" id="inputPassword6" class="form-control">
+                            <input type="inter" id="res32" class="form-control">
                         </div>
                         <div class="col-1">
-                            <input type="inter" id="inputPassword6" class="form-control">
+                            <input type="inter" id="res33" class="form-control">
                         </div>
                     </div>
                 </div>
@@ -113,13 +113,13 @@
                     </div>
                     <div class="row mb-3">
                         <div class="col-1">
-                            <input type="inter" id="inputPassword6" class="form-control">
+                            <input type="inter" id="res41" class="form-control">
                         </div>
                         <div class="col-1">
-                            <input type="inter" id="inputPassword6" class="form-control">
+                            <input type="inter" id="res42" class="form-control">
                         </div>
                         <div class="col-1">
-                            <input type="inter" id="inputPassword6" class="form-control">
+                            <input type="inter" id="res43" class="form-control">
                         </div>
                     </div>
                 </div>
@@ -138,30 +138,30 @@
                     </div>
                     <div class="row">
                         <div class="col-auto">
-                            <input type="inter" id="inputPassword6" class="form-control">
+                            <input type="inter" id="res511" class="form-control">
                         </div>
                         <div class="col-auto">
-                            <input type="textarea" id="inputPassword6" class="form-control"
+                            <input type="textarea" id="res512" class="form-control"
                                 placeholder="Indica el motivo">
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col-auto">
-                            <input type="inter" id="inputPassword6" class="form-control">
+                            <input type="inter" id="res521" class="form-control">
                         </div>
                         <div class="col-auto">
-                            <input type="textarea" id="inputPassword6" class="form-control"
+                            <input type="textarea" id="res522" class="form-control"
                                 placeholder="Indica el motivo">
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col-auto">
-                            <input type="inter" id="inputPassword6" class="form-control">
+                            <input type="inter" id="res531" class="form-control">
                         </div>
                         <div class="col-auto">
-                            <input type="textarea" id="inputPassword6" class="form-control"
+                            <input type="textarea" id="res532" class="form-control"
                                 placeholder="Indica el motivo">
                         </div>
                     </div>
@@ -173,7 +173,7 @@
                     <label for="GustarCompaneros" class="form-label">
                         Lo que más te gusta del Instituto es...
                     </label>
-                    <input type="text" class="form-control" id="GustarCompaneros">
+                    <input type="text" class="form-control" id="res6">
                 </div>
 
                 <!-- Tercera pregunta-->
@@ -181,7 +181,7 @@
                     <label for="GustarCompaneros" class="form-label">
                         Y lo que menos te gusta...
                     </label>
-                    <input type="text" class="form-control" id="GustarCompaneros">
+                    <input type="text" class="form-control" id="res7">
                 </div>
             </div>
         </div>
@@ -205,42 +205,59 @@
     </div>
 
     <script>
-        const $bAñadir = document.getElementById('Enviar')
+        const $bEnviar = document.getElementById('Enviar')
 
 
-        $bAñadir.addEventListener('click', event => {
+        $bEnviar.addEventListener('click', event => {
             event.preventDefault();
             var data = {
                 idUsuario: sessionStorage.getItem('id'),
                 codigoEncuesta: sessionStorage.getItem('codigoEncuesta'),
-                // pregunta11: 
-                // pregunta12:
-                // pregunta13: 
+                pregunta11: document.getElementById('res11').value,
+                pregunta12: document.getElementById('res12').value,
+                pregunta13: document.getElementById('res13').value,
+                pregunta21: document.getElementById('res21').value,
+                pregunta22: document.getElementById('res22').value,
+                pregunta23: document.getElementById('res23').value,
+                pregunta31: document.getElementById('res31').value,
+                pregunta32: document.getElementById('res32').value,
+                pregunta33: document.getElementById('res33').value,
+                pregunta41: document.getElementById('res41').value,
+                pregunta42: document.getElementById('res41').value,
+                pregunta43: document.getElementById('res41').value,
+                pregunta511: document.getElementById('res511').value,
+                pregunta512: document.getElementById('res512').value,
+                pregunta521: document.getElementById('res521').value,
+                pregunta522: document.getElementById('res522').value,
+                pregunta531: document.getElementById('res531').value,
+                pregunta532: document.getElementById('res532').value,
+                pregunta6: document.getElementById('res6').value,
+                pregunta7: document.getElementById('res7').value
             }
 
             console.log(data)
 
-            fetch('http://localhost:3001/api/encuesta', {
-                method: 'POST',
-                body: JSON.stringify(data),
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                }
-            })
-                .then(res => res.json())
-                .then(data => {
-                    console.log(data.token)
-                    sessionStorage.setItem('token', data.token)
-                    sessionStorage.setItem('id', data.idUsuario)
-                    sessionStorage.setItem('nombre', data.displayName)
-                    // Si el usuario está registrado te redirige a encuesta.html
-                    if (data.token) {
-                        location.assign('/encuesta.html')
-                    }
-                })
+            // fetch('http://localhost:3001/api/encuesta', {
+            //     method: 'POST',
+            //     body: JSON.stringify(data),
+            //     headers: {
+            //         'Accept': 'application/json',
+            //         'Content-Type': 'application/json'
+            //     }
+            // })
+            //     .then(res => res.json())
+            //     // .then(data => {
+            //     //     console.log(data.token)
+            //     //     sessionStorage.setItem('token', data.token)
+            //     //     sessionStorage.setItem('id', data.idUsuario)
+            //     //     sessionStorage.setItem('nombre', data.displayName)
+            //     //     // Si el usuario está registrado te redirige a encuesta.html
+            //     //     if (data.token) {
+            //     //         location.assign('/encuesta.html')
+            //     //     }
+            //     // })
 
-                .catch(err => { console.log(`Error en el login ${err}`) })
+            //     .catch(err => { console.log(`Error al enviar la encuesta: ${err}`) })
         })
     </script>
 </body>
