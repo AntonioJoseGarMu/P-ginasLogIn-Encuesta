@@ -214,12 +214,24 @@
         let cont = 1;
 
         const pedirDatos = async () => {
-            const respuesta = await fetch('http://localhost:3001/api/users');
-            let datos = await respuesta.json();
-            
-            for (let i = 0; i <= datos.users.length; i++) {
-                $nombresAlums.innerHTML += `<span> ${cont}-${datos.users[i].displayName}; </span>`;
-                cont++;
+            let datos;
+            try {
+                const respuesta = await fetch('http://localhost:3001/api/users', {
+                    method: 'GET',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+                    }
+                });
+                datos = await respuesta.json();
+                
+                for (let i = 0; i < datos.users.length; i++) {
+                    $nombresAlums.innerHTML += `<span> ${cont}-${datos.users[i].displayName}; </span>`;
+                    cont++;
+                }
+            }catch(err){
+                location.assign('/registro.html')
             }
         }
 
@@ -240,8 +252,8 @@
                 pregunta32: document.getElementById('res32').value,
                 pregunta33: document.getElementById('res33').value,
                 pregunta41: document.getElementById('res41').value,
-                pregunta42: document.getElementById('res41').value,
-                pregunta43: document.getElementById('res41').value,
+                pregunta42: document.getElementById('res42').value,
+                pregunta43: document.getElementById('res43').value,
                 pregunta511: document.getElementById('res511').value,
                 pregunta512: document.getElementById('res512').value,
                 pregunta521: document.getElementById('res521').value,
@@ -259,7 +271,8 @@
                 body: JSON.stringify(data),
                 headers: {
                     'Accept': 'application/json',
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${sessionStorage.getItem('token')}`
                 }
             })
                 .then(res => res.json())

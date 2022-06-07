@@ -119,7 +119,7 @@
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data.token)
+                console.log(data)
                 sessionStorage.setItem('token', data.token)
                 sessionStorage.setItem('id', data.idUsuario)
                 sessionStorage.setItem('codigoEncuesta', data.codigo)
@@ -130,7 +130,7 @@
                 }
             })
             
-            .catch(err => { console.log(`Error en el login ${err}`) })
+            .catch(err => { console.log(`Error en el login xx ${err}`) })
     })
 
     // document.getElementById('cerrarSesion').addEventListener('click', e => {
