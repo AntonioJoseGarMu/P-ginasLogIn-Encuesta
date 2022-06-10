@@ -399,7 +399,7 @@
             // Llamada a la base de datos para recoger la información de las encuestas
             const pedirDatos = async () => {
               let datos;
-              // try {
+              try {
               const respuesta = await fetch('http://localhost:3001/api/allEncuestas', {
                 method: 'GET',
                 headers: {
@@ -681,9 +681,9 @@
               crearCardPre67($card2, preguntas6)
               crearCardPre67($card3, preguntas7)
 
-              // } catch (err) {
-              //   location.assign('/registro.html')
-              // }
+              } catch (err) {
+                location.assign('/registro.html')
+              }
             }
 
             pedirDatos()
