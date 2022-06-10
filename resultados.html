@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resultados</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="sass/custom.css">
+  <link rel="icon" href="img/friendship.png">
+  <script src="https://unpkg.com/gojs@2.2.10/release/go.js"></script>
+  <style>
+    body {
+      /* background-image: url(img/aula.webp); */
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container-fluid">
+
+    <!-- Header -->
+    <div class="row">
+      <div class="col-12 mt-2">
+        <div class="alert bg-secondary text-center p-0" role="alert">
+          <h3 id="encabezado"><strong class="text-white">RESULTADOS</strong></h1>
+        </div>
+      </div>
+    </div>
+
+    <!-- Formularios -->
+    <div class="row ms-1 me-1">
+      <!-- Formulario primera parte-->
+      <div class="col-12 border formulario1">
+
+        <div class="mb-3"><strong>RESPUESTAS DE LAS PREGUNTAS</strong></div>
+
+        <!--Primera pregunta-->
+        <div class="row g-3 align-items-center">
+          <div>
+            <label for="GustarCompaneros" class="form-label">
+              Imagina que cambiamos de clase, ¿qué tres compañeros te gustaría que fueran contigo?
+            </label>
+          </div>
+          <div class="row mb-3">
+            <!-- GRAFO -->
+            <div id="Contenido1" class="w-full">
+              <!--Pading de 4 y el ancho todo -->
+              <div id="ejemplo1">
+                <!-- El  DIV del gráfico necesita un tamaño explicito o no se verá nada colocamos un borde y el tamaño -->
+                <div id="myDiagramDiv1"
+                  style="border: 1px solid black; width: 100%; height: 450px; position: relative; -webkit-tap-highlight-color: rgb(246, 246, 162);">
+                  <canvas tabindex="0" width="500" height="500"
+                    style="position: absolute; top: 0px; left: 0px; z-index: 2; user-select: none; touch-action: none; width: 398px; height: 398px;">
+                    Este texto se mostrará si tu navegador no soporta Canvas HTML.
+                  </canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Segunda pregunta-->
+          <div class="row g-3 align-items-center">
+            <div>
+              <label for="GustarCompaneros" class="form-label">
+                ¿Qué tres compañeros crees que te habrían elegido a ti para cambiar de clase?
+              </label>
+            </div>
+            <div class="row mb-3">
+              <!-- GRAFO -->
+              <div id="Contenido2" class="w-full">
+                <!--Pading de 4 y el ancho todo -->
+                <div id="ejemplo">
+                  <!-- El  DIV del gráfico necesita un tamaño explicito o no se verá nada colocamos un borde y el tamaño -->
+                  <div id="myDiagramDiv2"
+                    style="border: 1px solid black; width: 100%; height: 450px; position: relative; -webkit-tap-highlight-color: rgb(246, 246, 162);">
+                    <canvas tabindex="0" width="500" height="500"
+                      style="position: absolute; top: 0px; left: 0px; z-index: 2; user-select: none; touch-action: none; width: 398px; height: 398px;">
+                      Este texto se mostrará si tu navegador no soporta Canvas HTML.
+                    </canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!--Tercera  pregunta-->
+            <div class="row g-3 align-items-center">
+              <div>
+                <label for="GustarCompaneros" class="form-label">
+                  ¿Qué tres compañeros crees que no te habrían elegido para esa clase?
+                </label>
+              </div>
+              <div class="row mb-3">
+                <!-- GRAFO -->
+                <div id="Contenido3" class="w-full">
+                  <!--Pading de 4 y el ancho todo -->
+                  <div id="ejemplo3">
+                    <!-- El  DIV del gráfico necesita un tamaño explicito o no se verá nada colocamos un borde y el tamaño -->
+                    <div id="myDiagramDiv3"
+                      style="border: 1px solid black; width: 100%; height: 450px; position: relative; -webkit-tap-highlight-color: rgb(246, 246, 162);">
+                      <canvas tabindex="0" width="500" height="500"
+                        style="position: absolute; top: 0px; left: 0px; z-index: 2; user-select: none; touch-action: none; width: 398px; height: 398px;">
+                        Este texto se mostrará si tu navegador no soporta Canvas HTML.
+                      </canvas>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Cuarta pregunta-->
+              <div class="row g-3 align-items-center">
+                <div>
+                  <label for="GustarCompaneros" class="form-label">
+                    ¿Qué compañeros preferirías que no fueran a esa clase?
+                  </label>
+                </div>
+                <div class="row mb-3">
+                  <!-- GRAFO -->
+                  <div id="Contenido4" class="w-full">
+                    <!--Pading de 4 y el ancho todo -->
+                    <div id="ejemplo4">
+                      <!-- El  DIV del gráfico necesita un tamaño explicito o no se verá nada colocamos un borde y el tamaño -->
+                      <div id="myDiagramDiv4"
+                        style="border: 1px solid black; width: 100%; height: 450px; position: relative; -webkit-tap-highlight-color: rgb(246, 246, 162);">
+                        <canvas tabindex="0" width="500" height="500"
+                          style="position: absolute; top: 0px; left: 0px; z-index: 2; user-select: none; touch-action: none; width: 398px; height: 398px;">
+                          Este texto se mostrará si tu navegador no soporta Canvas HTML.
+                        </canvas>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Formulario segunda parte-->
+              <div class="col-12 border formulario2">
+
+                <!-- Primera pregunta-->
+                <div class="row g-3 align-items-center">
+                  <div>
+                    <label for="GustarCompaneros" class="form-label">
+                      ¿Crees que hay compañeros de tu clase que lo están pasando mal?
+                    </label>
+                  </div>
+                  <div class="row" id="card1">
+                    <!-- HABRÁ UNA TARJETA POR RESPUESTA -->
+
+                  </div>
+                </div>
+
+                <!-- Segunda pregunta-->
+                <div class="row g-3 align-items-center">
+                  <div>
+                    <label for="GustarCompaneros" class="form-label">
+                      Lo que más te gusta del Instituto es...
+                    </label>
+                  </div>
+                  <div class="row" id="card2">
+                    <!-- HABRÁ UNA TARJETA POR RESPUESTA -->
+
+                  </div>
+                </div>
+
+                <!-- Tercera pregunta-->
+                <div class="row g-3 align-items-center mb-5">
+                  <div>
+                    <label for="GustarCompaneros" class="form-label">
+                      Y lo que menos te gusta...
+                    </label>
+                  </div>
+                  <div class="row mb-5" id="card3">
+                    <!-- HABRÁ UNA TARJETA POR RESPUESTA -->
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="row footer">
+              <div class="col-12 mt-3">
+                <div class="alert bg-secondary text-center p-4" role="alert">
+                  <i class="bi bi-whatsapp text-white m-2"></i>
+                  <i class="bi bi-twitch text-white m-2"></i>
+                  <i class="bi bi-twitter text-white m-2"></i>
+                  <i class="bi bi-snapchat text-white m-2"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <script>
+
+            // let $card1 = document.getElementById('card1')
+
+            // function crearCard(donde, que) {
+
+            //   for (alumno of que) {
+            //     let nodo = document.createElement('div')
+            //     nodo.classList.add('col')
+            //     let cadena = ""
+            //     // console.log(alumno.datos)
+            //     for (respuesta of alumno.datos) {
+            //       cadena += `${respuesta.quien} ${respuesta.motivo}`
+            //     }
+            //     nodo.innerHTML = `
+            //         <div class="card text-white bg-primary mb-3" >
+            //             <div class="card-header">Nombre: ${alumno.nombre}</div>
+            //             <div class="card-body">
+            //               <h5 class="card-title">${cadena}</h5>
+            //               <p class="card-text">Motivo</p>
+            //             </div>
+            //         </div> 
+            //   `
+            //     donde.appendChild(nodo)
+            //   }
+
+            // }
+
+            // crearCard($card1, [
+            //   { nombre: 'Ricardo', datos: [{ quien: 'Solo', motivo: 'Esta solo' }, { quien: 'Juan', motivo: 'Esta no esta solo' }, { quien: 'Lucia', motivo: 'Esta es lucia solo' }] },
+            //   { nombre: 'Lucia', datos: [{ quien: 'Solo', motivo: 'Esta solo' }, { quien: 'Juan', motivo: 'Esta no esta solo' }] }
+            // ])
+
+            // const myDiagram1 =
+            //   new go.Diagram("myDiagramDiv1",  // Crea un grafico en el Div myDiagramDiv
+            //     { "undoManager.isEnabled": true });  // activamos el deshacer y rehacer.
+
+            // // Declaramos como serán los nodos del grafico
+            // myDiagram1.nodeTemplate =
+            //   new go.Node("Auto")  // Será un rectangulo redondeado
+            //     .add(new go.Shape("RoundedRectangle",
+            //       { strokeWidth: 0, fill: "white" })  // Sin borde y el relleno por defecto es blanco
+            //       .bind("fill", "color"))  // Indicamos que el color del nodo vendrá en el campo color del json
+            //     .add(new go.TextBlock(
+            //       { margin: 8, font: "bold 14px sans-serif", stroke: '#333' })  // Configuración del texto de los nodos
+            //       .bind("text", "key"));  // El texto vendrá dentro del json en el campo key.
+
+
+            // const myDiagram2 =
+            //   new go.Diagram("myDiagramDiv2",  // Crea un grafico en el Div myDiagramDiv
+            //     { "undoManager.isEnabled": true });  // activamos el deshacer y rehacer.
+
+            // // Declaramos como serán los nodos del grafico
+            // myDiagram2.nodeTemplate =
+            //   new go.Node("Auto")  // Será un rectangulo redondeado
+            //     .add(new go.Shape("RoundedRectangle",
+            //       { strokeWidth: 0, fill: "white" })  // Sin borde y el relleno por defecto es blanco
+            //       .bind("fill", "color"))  // Indicamos que el color del nodo vendrá en el campo color del json
+            //     .add(new go.TextBlock(
+            //       { margin: 8, font: "bold 14px sans-serif", stroke: '#333' })  // Configuración del texto de los nodos
+            //       .bind("text", "key"));  // El texto vendrá dentro del json en el campo key.
+
+            // const myDiagram3 =
+            //   new go.Diagram("myDiagramDiv3",  // Crea un grafico en el Div myDiagramDiv
+            //     { "undoManager.isEnabled": true });  // activamos el deshacer y rehacer.
+
+            // // Declaramos como serán los nodos del grafico
+            // myDiagram3.nodeTemplate =
+            //   new go.Node("Auto")  // Será un rectangulo redondeado
+            //     .add(new go.Shape("RoundedRectangle",
+            //       { strokeWidth: 0, fill: "white" })  // Sin borde y el relleno por defecto es blanco
+            //       .bind("fill", "color"))  // Indicamos que el color del nodo vendrá en el campo color del json
+            //     .add(new go.TextBlock(
+            //       { margin: 8, font: "bold 14px sans-serif", stroke: '#333' })  // Configuración del texto de los nodos
+            //       .bind("text", "key"));  // El texto vendrá dentro del json en el campo key.
+
+
+            // const myDiagram4 =
+            //   new go.Diagram("myDiagramDiv4",  // Crea un grafico en el Div myDiagramDiv
+            //     { "undoManager.isEnabled": true });  // activamos el deshacer y rehacer.
+
+
+            // // Declaramos como serán los nodos del grafico
+            // myDiagram4.nodeTemplate =
+            //   new go.Node("Auto")  // Será un rectangulo redondeado
+            //     .add(new go.Shape("RoundedRectangle",
+            //       { strokeWidth: 0, fill: "white" })  // Sin borde y el relleno por defecto es blanco
+            //       .bind("fill", "color"))  // Indicamos que el color del nodo vendrá en el campo color del json
+            //     .add(new go.TextBlock(
+            //       { margin: 8, font: "bold 14px sans-serif", stroke: '#333' })  // Configuración del texto de los nodos
+            //       .bind("text", "key"));  // El texto vendrá dentro del json en el campo key.
+
+
+
+
+            // const obtenerColorPastelAleatorio = () => {
+            //   const h = obtenerNumeroAleatorio(360);
+
+            //   return `hsl(${h}deg, 90%, 90%)`;
+            // };
+
+            // const obtenerNumeroAleatorio = (maxNum) => {
+            //   return Math.floor(Math.random() * maxNum);
+            // };
+
+            // let unos = crearAlumnos(['Ricardo', "Jose", "Lucia", "Manuel", "Solo", "Juan"])
+
+            //Función que crea el json con los nombres de los alumnos para pintarlos en la grafica
+            //Desde un array pasado como parametro
+            // function crearAlumnos(alumnos) {
+            //   let todos = []
+            //   let alumno = {}
+
+            //   for (a of alumnos) {
+            //     alumno = {}
+            //     alumno.key = a
+            //     alumno.color = obtenerColorPastelAleatorio()
+            //     todos.push(alumno)
+            //   }
+            //   // console.log(todos)
+            //   return (todos)
+            // }
+
+
+            // Array de objetos para crear las relaciones
+            // let rel = crearRelaciones([
+            //   { nombre: "Ricardo", relacion: ["Jose", "Lucia", "Manuel"] },
+            //   { nombre: "Jose", relacion: ["Lucia", "Solo", "Manuel"] },
+            //   { nombre: "Juan", relacion: ["Lucia", "Solo", "Ricardo"] },
+            //   { nombre: "Manuel", relacion: ["Juan", "Lucia", "Ricardo"] }
+            // ])
+
+            // Función que le pasamos las relaciones entre un alumnos y tres más
+            //Crea el json para crear el objeto que entiende gojs
+
+            // function crearRelaciones(relaciones) {
+            //   let todos = []
+            //   let relacion = {}
+
+            //   for (a of relaciones) {
+            //     for (r of a.relacion) {
+            //       relacion = {}
+            //       relacion.from = a.nombre
+            //       relacion.to = r
+            //       todos.push(relacion)
+            //       // console.log(relacion)
+            //     }
+            //   }
+            //   return todos
+            // }
+
+            //Cambiamos el tipo de distribución de los nodos en la presentación
+            // myDiagram1.layout = new go.ForceDirectedLayout;
+            //Pintamos la presentación
+            // myDiagram1.model = new go.GraphLinksModel(unos, rel);
+
+
+            //Cambiamos el tipo de distribución de los nodos en la presentación
+            // myDiagram2.layout = new go.ForceDirectedLayout;
+            //Pintamos la presentación
+            // myDiagram2.model = new go.GraphLinksModel(
+            //   crearAlumnos(
+            //     ['Ricardo', "Jose", "Lucia", "Manuel", "Solo", "Juan"]
+            //   ),
+            //   crearRelaciones([
+            //     { nombre: "Lucia", relacion: ["Jose", "Ricardo", "Manuel"] },
+            //     { nombre: "Jose", relacion: ["Juan", "Solo", "Manuel"] },
+            //     { nombre: "Juan", relacion: ["Lucia", "Solo", "Ricardo"] },
+            //     { nombre: "Manuel", relacion: ["Juan", "Lucia", "Ricardo"] },
+            //     { nombre: "Solo", relacion: ["Manuel", "Lucia", "Ricardo"] },
+            //   ]));
+
+            //Cambiamos el tipo de distribución de los nodos en la presentación
+            // myDiagram3.layout = new go.ForceDirectedLayout;
+            //Pintamos la presentación
+            // myDiagram3.model = new go.GraphLinksModel(unos, rel);
+
+            //Cambiamos el tipo de distribución de los nodos en la presentación
+            // myDiagram4.layout = new go.ForceDirectedLayout;
+            //Pintamos la presentación
+            // myDiagram4.model = new go.GraphLinksModel(unos, rel);
+
+            // Los json con los alumnos, donde ponemos el key con el texto que aparecera y el color del nodo.
+            /* let alumnos = [
+              { key: "Ricardo", color: "lightblue" },
+              { key: "Jose", color: "orange" },
+              { key: "Manuel", color: "lightgreen" },
+              { key: "Delta", color: "pink" },
+              { key: "Lucia", color: "yellow" }
+            ]
+            // los json con las relaciones entre nodos
+            let relaciones = [
+              { from: "Ricardo", to: "Jose" },
+              { from: "Ricardo", to: "Manuel" },
+              { from: "Ricardo", to: "Lucia" }
+            ] */
+
+            // Llamada a la base de datos para recoger la información de las encuestas
+            const pedirDatos = async () => {
+              let datos;
+              // try {
+              const respuesta = await fetch('http://localhost:3001/api/allEncuestas', {
+                method: 'GET',
+                headers: {
+                  'Accept': 'application/json',
+                  'Content-Type': 'application/json',
+                  'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+                }
+              });
+              datos = await respuesta.json();
+              // console.log(datos);
+
+              // Meto el nombre de los alumnos que tienen una encuesta en un array, para luego pasarselo a la funcion crearAlumnos()
+              let alumnosss = [];
+              let unos = [];
+              let preguntas1 = [];
+              let preguntas2 = [];
+              let preguntas3 = [];
+              let preguntas4 = [];
+              let preguntas5 = [];
+              let preguntas6 = [];
+              let preguntas7 = [];
+
+              for (let encuesta of datos.encuestas) {
+                alumnosss.push(encuesta.nombre);
+              }
+              // console.log(alumnosss)
+
+              // Respuestas pregunta 1
+              for (let resp of datos.encuestas) {
+                pregunta1 = {
+                  nombre: resp.nombre,
+                  relacion: [resp.pregunta11, resp.pregunta12, resp.pregunta13]
+                }
+                preguntas1.push(pregunta1)
+              }
+              // console.log(preguntas1)
+
+              // Respuestas pregunta 2
+              for (let resp of datos.encuestas) {
+                pregunta2 = {
+                  nombre: resp.nombre,
+                  relacion: [resp.pregunta21, resp.pregunta22, resp.pregunta23]
+                }
+                preguntas2.push(pregunta2)
+              }
+              // console.log(preguntas2)
+
+              // Respuestas pregunta 3
+              for (let resp of datos.encuestas) {
+                pregunta3 = {
+                  nombre: resp.nombre,
+                  relacion: [resp.pregunta31, resp.pregunta32, resp.pregunta33]
+                }
+                preguntas3.push(pregunta3)
+              }
+              // console.log(preguntas3)
+
+              // Respuestas pregunta 4
+              for (let resp of datos.encuestas) {
+                pregunta4 = {
+                  nombre: resp.nombre,
+                  relacion: [resp.pregunta41, resp.pregunta42, resp.pregunta43]
+                }
+                preguntas4.push(pregunta4)
+              }
+              // console.log(preguntas4)
+
+
+              const myDiagram1 =
+                new go.Diagram("myDiagramDiv1",  // Crea un grafico en el Div myDiagramDiv
+                  { "undoManager.isEnabled": true });  // activamos el deshacer y rehacer.
+
+              // Declaramos como serán los nodos del grafico
+              myDiagram1.nodeTemplate =
+                new go.Node("Auto")  // Será un rectangulo redondeado
+                  .add(new go.Shape("RoundedRectangle",
+                    { strokeWidth: 0, fill: "white" })  // Sin borde y el relleno por defecto es blanco
+                    .bind("fill", "color"))  // Indicamos que el color del nodo vendrá en el campo color del json
+                  .add(new go.TextBlock(
+                    { margin: 8, font: "bold 14px sans-serif", stroke: '#333' })  // Configuración del texto de los nodos
+                    .bind("text", "key"));  // El texto vendrá dentro del json en el campo key.
+
+              const myDiagram2 =
+                new go.Diagram("myDiagramDiv2",  // Crea un grafico en el Div myDiagramDiv
+                  { "undoManager.isEnabled": true });  // activamos el deshacer y rehacer.
+
+              // Declaramos como serán los nodos del grafico
+              myDiagram2.nodeTemplate =
+                new go.Node("Auto")  // Será un rectangulo redondeado
+                  .add(new go.Shape("RoundedRectangle",
+                    { strokeWidth: 0, fill: "white" })  // Sin borde y el relleno por defecto es blanco
+                    .bind("fill", "color"))  // Indicamos que el color del nodo vendrá en el campo color del json
+                  .add(new go.TextBlock(
+                    { margin: 8, font: "bold 14px sans-serif", stroke: '#333' })  // Configuración del texto de los nodos
+                    .bind("text", "key"));  // El texto vendrá dentro del json en el campo key.
+
+              const myDiagram3 =
+                new go.Diagram("myDiagramDiv3",  // Crea un grafico en el Div myDiagramDiv
+                  { "undoManager.isEnabled": true });  // activamos el deshacer y rehacer.
+
+              // Declaramos como serán los nodos del grafico
+              myDiagram3.nodeTemplate =
+                new go.Node("Auto")  // Será un rectangulo redondeado
+                  .add(new go.Shape("RoundedRectangle",
+                    { strokeWidth: 0, fill: "white" })  // Sin borde y el relleno por defecto es blanco
+                    .bind("fill", "color"))  // Indicamos que el color del nodo vendrá en el campo color del json
+                  .add(new go.TextBlock(
+                    { margin: 8, font: "bold 14px sans-serif", stroke: '#333' })  // Configuración del texto de los nodos
+                    .bind("text", "key"));  // El texto vendrá dentro del json en el campo key.
+
+
+              const myDiagram4 =
+                new go.Diagram("myDiagramDiv4",  // Crea un grafico en el Div myDiagramDiv
+                  { "undoManager.isEnabled": true });  // activamos el deshacer y rehacer.
+
+
+              // Declaramos como serán los nodos del grafico
+              myDiagram4.nodeTemplate =
+                new go.Node("Auto")  // Será un rectangulo redondeado
+                  .add(new go.Shape("RoundedRectangle",
+                    { strokeWidth: 0, fill: "white" })  // Sin borde y el relleno por defecto es blanco
+                    .bind("fill", "color"))  // Indicamos que el color del nodo vendrá en el campo color del json
+                  .add(new go.TextBlock(
+                    { margin: 8, font: "bold 14px sans-serif", stroke: '#333' })  // Configuración del texto de los nodos
+                    .bind("text", "key"));  // El texto vendrá dentro del json en el campo key.
+
+              const obtenerColorPastelAleatorio = () => {
+                const h = obtenerNumeroAleatorio(360);
+
+                return `hsl(${h}deg, 90%, 90%)`;
+              };
+
+              const obtenerNumeroAleatorio = (maxNum) => {
+                return Math.floor(Math.random() * maxNum);
+              };
+
+              unos = crearAlumnos(alumnosss)
+
+              function crearAlumnos(alumnos) {
+                let todos = []
+                let alumno = {}
+
+                for (a of alumnos) {
+                  alumno = {}
+                  alumno.key = a
+                  alumno.color = obtenerColorPastelAleatorio()
+                  todos.push(alumno)
+                }
+                // console.log(todos)
+                return (todos)
+              }
+
+              // Array de objetos para crear las relaciones
+              let rel1 = crearRelaciones(preguntas1)
+              let rel2 = crearRelaciones(preguntas2)
+              let rel3 = crearRelaciones(preguntas3)
+              let rel4 = crearRelaciones(preguntas4)
+
+              function crearRelaciones(relaciones) {
+                let todos = []
+                let relacion = {}
+
+                for (a of relaciones) {
+                  for (r of a.relacion) {
+                    relacion = {}
+                    relacion.from = a.nombre
+                    relacion.to = r
+                    todos.push(relacion)
+                    // console.log(relacion)
+                  }
+                }
+                return todos
+              }
+
+
+              //Cambiamos el tipo de distribución de los nodos en la presentación
+              myDiagram1.layout = new go.ForceDirectedLayout;
+              //Pintamos la presentación
+              myDiagram1.model = new go.GraphLinksModel(unos, rel1);
+
+              //Cambiamos el tipo de distribución de los nodos en la presentación
+              myDiagram2.layout = new go.ForceDirectedLayout;
+              //Pintamos la presentación
+              myDiagram2.model = new go.GraphLinksModel(unos, rel2);
+
+              //Cambiamos el tipo de distribución de los nodos en la presentación
+              myDiagram3.layout = new go.ForceDirectedLayout;
+              //Pintamos la presentación
+              myDiagram3.model = new go.GraphLinksModel(unos, rel3);
+
+              //Cambiamos el tipo de distribución de los nodos en la presentación
+              myDiagram4.layout = new go.ForceDirectedLayout;
+              //Pintamos la presentación
+              myDiagram4.model = new go.GraphLinksModel(unos, rel4);
+
+              // Crear cards
+              let $card1 = document.getElementById('card1')
+              let $card2 = document.getElementById('card2')
+              let $card3 = document.getElementById('card3')
+
+              // Respuestas pregunta 5
+              for (let resp of datos.encuestas) {
+                pregunta5 = {
+                  nombre: resp.nombre,
+                  datos: [{ quien: resp.pregunta511, motivo: resp.pregunta512 }, { quien: resp.pregunta521, motivo: resp.pregunta522 }, { quien: resp.pregunta531, motivo: resp.pregunta532 }]
+                }
+                preguntas5.push(pregunta5)
+              }
+
+              // Respuestas pregunta 6
+              for (let resp of datos.encuestas) {
+                pregunta6 = {
+                  nombre: resp.nombre,
+                  datos: [{ motivo: resp.pregunta6 }]
+                }
+                preguntas6.push(pregunta6)
+              }
+
+              // Respuestas pregunta 7
+              for (let resp of datos.encuestas) {
+                pregunta7 = {
+                  nombre: resp.nombre,
+                  datos: [{ motivo: resp.pregunta7 }]
+                }
+                preguntas7.push(pregunta7)
+              }
+
+              function crearCardPre5(donde, que) {
+
+                for (alumno of que) {
+                  let nodo = document.createElement('div')
+                  nodo.classList.add('col')
+                  let cadena = ""
+                  // console.log(alumno.datos)
+                  for (resp of alumno.datos) {
+                    cadena += `${resp.quien} ${resp.motivo}`
+                  }
+                  // console.log(cadena);
+                  nodo.innerHTML = `
+                    <div class="card text-white bg-primary mb-3" >
+                        <div class="card-header">Nombre: ${alumno.nombre}</div>
+                        <div class="card-body">
+                          <p class="card-text">Motivo</p>
+                          <h5 class="card-title">${cadena}</h5>
+                        </div>
+                    </div> 
+              `
+                  donde.appendChild(nodo)
+                }
+
+              }
+
+              function crearCardPre67(donde, que) {
+
+                for (alumno of que) {
+                  let nodo = document.createElement('div')
+                  nodo.classList.add('col')
+                  let cadena = ""
+                  // console.log(alumno.datos)
+                  for (resp of alumno.datos) {
+                    cadena += `${resp.motivo}`
+                  }
+                  // console.log(cadena);
+                  nodo.innerHTML = `
+                    <div class="card text-white bg-success mb-3" >
+                        <div class="card-header">Nombre: ${alumno.nombre}</div>
+                        <div class="card-body">
+                          <p class="card-text">Motivo</p>
+                          <h5 class="card-title">${cadena}</h5>
+                        </div>
+                    </div> 
+                `
+                  donde.appendChild(nodo)
+                }
+
+              }
+
+              crearCardPre5($card1, preguntas5)
+              crearCardPre67($card2, preguntas6)
+              crearCardPre67($card3, preguntas7)
+
+              // } catch (err) {
+              //   location.assign('/registro.html')
+              // }
+            }
+
+            pedirDatos()
+          </script>
+</body>
+
+</html>

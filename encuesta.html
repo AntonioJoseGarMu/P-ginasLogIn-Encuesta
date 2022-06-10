@@ -16,7 +16,7 @@
     <link rel="icon" href="img/friendship.png">
     <style>
         body {
-            background-image: url(img/amistad.jpg);
+            background-image: url(img/amistad1.png);
             background-repeat: no-repeat;
             background-size: cover;
         }
@@ -59,13 +59,13 @@
                         </label>
                     </div>
                     <div class="row mb-3">
-                        <div class="col-1">
+                        <div class="col-2">
                             <input type="inter" id="res11" class="form-control">
                         </div>
-                        <div class="col-1">
+                        <div class="col-2">
                             <input type="inter" id="res12" class="form-control">
                         </div>
-                        <div class="col-1">
+                        <div class="col-2">
                             <input type="inter" id="res13" class="form-control">
                         </div>
                     </div>
@@ -79,13 +79,13 @@
                         </label>
                     </div>
                     <div class="row mb-3">
-                        <div class="col-1">
+                        <div class="col-2">
                             <input type="inter" id="res21" class="form-control">
                         </div>
-                        <div class="col-1">
+                        <div class="col-2">
                             <input type="inter" id="res22" class="form-control">
                         </div>
-                        <div class="col-1">
+                        <div class="col-2">
                             <input type="inter" id="res23" class="form-control">
                         </div>
                     </div>
@@ -99,13 +99,13 @@
                         </label>
                     </div>
                     <div class="row mb-3">
-                        <div class="col-1">
+                        <div class="col-2">
                             <input type="inter" id="res31" class="form-control">
                         </div>
-                        <div class="col-1">
+                        <div class="col-2">
                             <input type="inter" id="res32" class="form-control">
                         </div>
-                        <div class="col-1">
+                        <div class="col-2">
                             <input type="inter" id="res33" class="form-control">
                         </div>
                     </div>
@@ -119,13 +119,13 @@
                         </label>
                     </div>
                     <div class="row mb-3">
-                        <div class="col-1">
+                        <div class="col-2">
                             <input type="inter" id="res41" class="form-control">
                         </div>
-                        <div class="col-1">
+                        <div class="col-2">
                             <input type="inter" id="res42" class="form-control">
                         </div>
-                        <div class="col-1">
+                        <div class="col-2">
                             <input type="inter" id="res43" class="form-control">
                         </div>
                     </div>
@@ -240,7 +240,7 @@
         $bEnviar.addEventListener('click', event => {
             event.preventDefault();
             var data = {
-                idUsuario: sessionStorage.getItem('id'),
+                nombre: sessionStorage.getItem('nombre'),
                 codigoEncuesta: sessionStorage.getItem('codigoEncuesta'),
                 pregunta11: document.getElementById('res11').value,
                 pregunta12: document.getElementById('res12').value,
@@ -277,7 +277,9 @@
             })
                 .then(res => res.json())
                 .then(data => {
+                    console.log(data)
                     // location.assign('/registro.html')
+                    // sessionStorage.removeItem('token')
                 })
 
                 .catch(err => { console.log(`Error al enviar la encuesta: ${err}`) })
